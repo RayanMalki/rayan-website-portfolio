@@ -92,9 +92,29 @@ export default function Home() {
           ))}
         </nav>
 
-        <a className="btn btn-nav" href="/cv-rayan-malki-english.pdf" target="_blank" rel="noopener">
-          Download CV
-        </a>
+        <div className="header-right">
+          <a
+            className="header-social"
+            href="https://github.com/RayanMalki"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+          >
+            <img src="/icons/github.svg" alt="" aria-hidden="true" />
+          </a>
+          <a
+            className="header-social"
+            href="https://linkedin.com/in/RayanMalki"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+          >
+            <img src="/icons/linkedin.svg" alt="" aria-hidden="true" />
+          </a>
+          <a className="btn btn-nav" href="/cv-rayan-malki-english.pdf" target="_blank" rel="noopener">
+            Download CV
+          </a>
+        </div>
       </header>
 
       <main>

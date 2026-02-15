@@ -201,9 +201,38 @@ a {
 }
 
 .btn-nav {
-  justify-self: end;
   font-size: 0.84rem;
   padding: 0.55rem 0.9rem;
+}
+
+.header-right {
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-social {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(167, 186, 245, 0.28);
+  background: rgba(12, 21, 45, 0.74);
+  display: grid;
+  place-items: center;
+  transition: border-color 0.2s ease, transform 0.18s ease;
+}
+
+.header-social:hover {
+  border-color: rgba(122, 224, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+.header-social img {
+  width: 1.05rem;
+  height: 1.05rem;
+  object-fit: contain;
+  filter: brightness(0) invert(0.92);
 }
 
 main,
@@ -554,6 +583,20 @@ h1 {
 
   .btn-nav {
     justify-self: end;
+  }
+
+  .header-right {
+    gap: 0.35rem;
+  }
+
+  .header-social {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .header-social img {
+    width: 0.92rem;
+    height: 0.92rem;
   }
 
   .brand span {
