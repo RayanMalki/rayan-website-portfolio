@@ -120,7 +120,7 @@ export default function Home() {
       <main>
         <section className="hero section reveal" id="about">
           <div className="hero-copy">
-            <p className="eyebrow">Software Engineering Student, Montreal</p>
+            <p className="eyebrow">Backend-Focused Software Engineering Student — Montreal</p>
             <h1>Hi, I&apos;m Rayan Malki</h1>
             <p className="lead">
               I build reliable backend systems and practical full-stack products with a strong focus on performance,
@@ -188,28 +188,30 @@ export default function Home() {
 
           <div className="project-grid">
             {projects.map((project) => (
-              <Link key={project.slug} href={`/projects/${project.slug}`} className="project-card project-link-card">
+              <div key={project.slug} className="project-card project-link-card">
                 {project.image ? (
-                  <div className="project-thumb">
+                  <a href={project.visitUrl} target="_blank" rel="noopener" className="project-thumb">
                     <Image
                       src={project.image}
                       alt={project.imageAlt || `${project.title} preview`}
                       width={1200}
                       height={675}
                     />
-                  </div>
+                  </a>
                 ) : null}
-                <div className="project-top">
-                  <h3>{project.title}</h3>
-                  <span className="project-open">Open</span>
-                </div>
-                <p>{project.shortSummary}</p>
-                <ul className="project-tags">
-                  {project.stack.slice(0, 4).map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </Link>
+                <Link href={`/projects/${project.slug}`}>
+                  <div className="project-top">
+                    <h3>{project.title}</h3>
+                    <span className="project-open">Open</span>
+                  </div>
+                  <p>{project.shortSummary}</p>
+                  <ul className="project-tags">
+                    {project.stack.slice(0, 4).map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </Link>
+              </div>
             ))}
           </div>
         </section>
