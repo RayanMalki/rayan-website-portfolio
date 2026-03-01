@@ -1,5 +1,23 @@
 export const projects = [
   {
+    slug: 'fraudshield',
+    title: 'FraudShield',
+    shortSummary: 'Real-time fraud detection platform with a 5-microservice architecture and XGBoost ML classifier.',
+    image: '/images/fraudshield-preview.png',
+    imageAlt: 'FraudShield platform screenshot',
+    summary:
+      'FraudShield is a real-time financial transaction fraud detection platform built with a 5-microservice architecture (API gateway, user, ingestion, results, ML service). It uses an XGBoost binary classifier trained on the PaySim dataset (~6.3M transactions) to predict whether a transaction is fraudulent, returning a confidence score and risk level.',
+    stack: ['Java', 'Spring Boot', 'Python', 'FastAPI', 'Next.js', 'PostgreSQL', 'gRPC', 'Docker', 'AWS'],
+    visitLabel: 'View on GitHub',
+    visitUrl: 'https://github.com/RayanMalki/fraudshield',
+    highlights: [
+      'Built a 5-microservice architecture (API gateway, user, ingestion, results, ML service) with gRPC and Protobuf contracts.',
+      'Trained an XGBoost binary classifier on the PaySim dataset (~6.3M transactions) returning a confidence score and risk level.',
+      'Implemented backend services with Java/Spring Boot and an ML inference service with Python/FastAPI.',
+      'Built a Next.js 15 / React 19 frontend with a transaction analysis form, confidence score visualization, and fraud history dashboard.'
+    ]
+  },
+  {
     slug: 'resume-tailor',
     title: 'Resume Tailor',
     shortSummary: 'ATS-focused resume platform with scoring, async processing, and artifact generation.',

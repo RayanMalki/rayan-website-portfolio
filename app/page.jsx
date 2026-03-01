@@ -45,18 +45,23 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const sections = document.querySelectorAll('main section[id]');
-    const sectionObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActiveSection(entry.target.id);
-        });
-      },
-      { rootMargin: '-45% 0px -45% 0px' }
-    );
+    const sections = Array.from(document.querySelectorAll('main section[id]'));
 
-    sections.forEach((section) => sectionObserver.observe(section));
-    return () => sectionObserver.disconnect();
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      let current = sections[0]?.id;
+      sections.forEach((section) => {
+        if (scrollY >= section.offsetTop - windowHeight * 0.4) {
+          current = section.id;
+        }
+      });
+      setActiveSection(current);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -227,7 +232,6 @@ export default function Home() {
           </div>
           <div className="contact-links">
             <a href="mailto:rayanmalki54@gmail.com">rayanmalki54@gmail.com</a>
-            <a href="tel:+15145609384">+1 (514) 560-9384</a>
             <a href="https://github.com/RayanMalki" target="_blank" rel="noopener">
               github.com/RayanMalki
             </a>
